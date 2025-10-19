@@ -9,7 +9,7 @@ function App() {
           {" "}
           <img src="https://tinyurl.com/5ckz33t5" />
         </a>
-        <h2>Save Earth today for tomorrow</h2>
+        <h2 className="text-black -600 font-bold">Save Earth today for tomorrow</h2>
 
         <p>
           <h3>
