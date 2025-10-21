@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"; // for <head> tags like <title>
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-black flex flex-col rounded-md m-5">
+    <div className="min-h-screen bg-gray-50 text-black flex flex-col rounded-md m-4">
       <Helmet>
         <title>Moc webApp</title>
         <meta name="description" content="its a moc page"></meta>
@@ -27,7 +27,7 @@ function App() {
       {/*  */}
       <div className="w-full flex justify-between">
         <h2 className="font-bold">Password</h2>
-        <h2 className="font-bold">Forget Password!</h2>
+        <a href=" #" className="text-red-700 font-bold">Forget Password!</a>
       </div>
       {/*  */}
       <div className="py-6">
@@ -42,15 +42,14 @@ function App() {
         {/*  */}
         <label className="inline-flex items left-2  space-x-1">
           <input
-            type="radio"
+            type="checkbox"
             name="check"
-            value="√"
-            className="appearance-none w-5 h-5 border bg-red-200 border-gray-400 rounded checked:bg-green-500 checked:border-black checked:"
+            value="check"
           />
-          <span>Remember me</span>
+          <span className="text-lg">Remember me</span>
         </label>
         {/*  */}
-        <p className="">By clicking you will agree to our terms</p>
+        <p className="text-md">By clicking you will agree to our {" "}<a href=" #" className="text-xs font-extrabold text-blue-900">term's</a></p>
       </div>
       {/*  */}
       <button class="  bg-blue-500 text-white font-semibold justify-start px-4 py-2 rounded hover:bg-green-600 active:bg-yellow-700 transition">
@@ -62,7 +61,7 @@ function App() {
       </div>
       {/*  */}
       <div className="flex justify-between">
-        <button class="  bg-pink-500 text-white font-semibold px-4 py-2 rounded hover:bg-green-600 active:bg-yellow-700 transition">
+        <button href="https://www.google.com/imghp?hl=en" class="  bg-pink-500 text-white font-semibold px-4 py-2 rounded hover:bg-green-600 active:bg-yellow-700 transition">
           Continue with google
         </button>
         <button class="  bg-violet-600 text-white font-semibold px-4 py-2 rounded hover:bg-green-600 active:bg-yellow-700 transition">
@@ -72,9 +71,10 @@ function App() {
       {/*  */}
       <div className="flex  justify-between">
         <p className="text-black font-weight-700">
-          Dont have an account?
+          Don't have an account?
         </p>
-        <p className="text-blue-600 text-xl  font-weight-700">Sign up!</p>
+       <a href=" #" class="text-blue-600 text-xl font-bold">Sign up!</a>
+        
       </div>
       {/*  ends here */}
     </div>
