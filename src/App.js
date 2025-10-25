@@ -6,7 +6,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 text-black flex flex-col rounded-md m-4">
       <Helmet>
         <title>Moc webApp</title>
-        <meta name="description" content="its a moc page"></meta>
+        <meta name="description" content="its a moc page test 2"></meta>
       </Helmet>
       {/* starts here */}
 
