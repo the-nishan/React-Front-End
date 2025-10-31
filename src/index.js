@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UseStatePractice from "./useState/useStatePractice"
+import ToDoApp from "./toDo/toDoApp"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UseStatePractice />
+    <ToDoApp />
   </React.StrictMode>
 );
 
