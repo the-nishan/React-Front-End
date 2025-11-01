@@ -5,12 +5,15 @@ function ToDoApp() {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
+   console.log(event.target.value);
     setInputValue(event.target.value);
   };
 
   const handleAddTodo = () => {
     if (inputValue.trim()) {
+      //  console.log("oldTodos", todo);  
       setTodos([...todo, inputValue]);
+      // console.log("newTodos", todo);  
       setInputValue('');
     }
   };

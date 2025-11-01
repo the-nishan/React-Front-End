@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function useStatePractice() {
   const [count, setCount] = useState(0);
 
-  let funcIncrease = () => {
-    let newCount = count + 1;
+  useEffect(()=>{
+    let newCount = count;
     if (newCount % 5 === 0) {
-      newCount++;
-    }
-    setCount(newCount);
+      setCount(count+1);
+}},[count]);
+
+  let funcIncrease = () => {
+    setCount(count+1);
   };
 
   let funcDecrease = () => {
-    let newCount = count - 1;
-    if (newCount % 5 === 0) {
-      newCount--;
-    }
-    setCount(newCount);
-  };
+      setCount(count-1);
+    };
 
   let RESET = () => {
     setCount(0);
