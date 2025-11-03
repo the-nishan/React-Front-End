@@ -10,7 +10,7 @@ function useStatePractice() {
   const  [mode,setMode] = useState(modeOptions.INCREMENT) // Default Mode Increment Considered!!
 
   useEffect(() => {
-    if (count % 5 === 0) {
+    if (count !== 0 && count % 5 === 0) {
       setCount(mode === modeOptions.INCREMENT ? count+1 : count-1);
     }
   }, [count,mode]);
