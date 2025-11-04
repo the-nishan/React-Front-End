@@ -17,6 +17,10 @@ function ToDoApp() {
       setInputValue('');
     }
   };
+    const handleDelete = (id) => {
+    setTodos(todo.filter(todo => todo.id !== id)); //selected id chara bakigula retain korbe
+  };
+
 
   return (
   <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
@@ -38,7 +42,16 @@ function ToDoApp() {
       </button>
     </div>
 
-    <ul className="bg-red-400 rounded-md w-full">
+    <div>
+    <button
+              onClick={() => handleDelete(todo.id)}
+              className="text-red-500 hover:text-red-700 text-sm font-medium ml-4"
+            >
+              Delete
+            </button>
+            </div>
+
+    <ul className="bg-red-40 rounded-md w-full">
       {todo.map((todo, index) => (
         <li
           key={index}
