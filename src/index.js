@@ -10,7 +10,7 @@ import ToDoApp from "./toDo/toDoApp"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ToDoApp />
+    <UseStatePractice />
   </React.StrictMode>
 );
 
