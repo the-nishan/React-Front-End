@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+// Convention to declare const by ALL Caps!
 
+const API_ENDPOINT = "https://jsonplaceholder.typicode.com/todos/3"
+
+// status = 200 means api call successful!
 
 const modeOptions = {
   INCREMENT:"increment",
@@ -10,6 +14,31 @@ const modeOptions = {
 function useStatePractice() {
   const [count, setCount] = useState(0);
   const  [mode,setMode] = useState(modeOptions.INCREMENT) // Default Mode Increment Considered!!
+
+
+  useEffect(()=>{
+
+    // Called when First time this component rendered!
+    // callback is called when certain asynchronous task done!
+    // Fetch support callback, not async/await
+    
+    console.log("calling");
+
+
+      fetch(API_ENDPOINT)
+      .then(response => {
+        console.log(response)
+      })
+
+
+
+    console.log("Now Calling")
+
+
+
+
+  },[])
+
 
   useEffect(() => {
     if (count !== 0 && count % 5 === 0) {
