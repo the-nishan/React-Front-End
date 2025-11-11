@@ -1,56 +1,60 @@
 import React, { useState } from "react";
 
-function ToDoApp() {
-  const [todos, setTodos] = useState([]);
+export default function TodoApp() {
+  const [tasks, setTasks] = useState([]);
+
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleAddTodo = () => {
+  const handleAdd = () => {
     if (inputValue.trim()) {
-      setTodos([...todos, inputValue]);
+      setTasks([...tasks, inputValue]);
+
       setInputValue("");
     }
   };
 
-  const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const handleDelete = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <h1 className="text-5xl font-bold text-indigo-700 mb-8">To-Do List</h1>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-blue-200 flex flex-col items-center justify-center p-6">
+      <h1 className="text-4xl font-bold text-indigo-700 mb-6">📝 To-Do App</h1>
+
+      {/* Input Section */}
 
       <div className="flex w-full max-w-md mb-6">
         <input
           type="text"
           value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Enter a new task..."
-          className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-dashed focus:ring-2 focus:ring-indigo-400"
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Enter a task..."
+          className="flex-grow px-4 py-2 border border-indigo-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
+
         <button
-          onClick={handleAddTodo}
-          className="bg-indigo-500 text-white px-5 py-2 rounded-r-md hover:bg-indigo-600"
+          onClick={handleAdd}
+          className="bg-indigo-500 text-white px-5 py-2 rounded-r-md hover:bg-indigo-600 transition"
         >
           Add
         </button>
       </div>
 
-      <ul className="bg-white rounded-md shadow-md w-full max-w-md divide-y divide-gray-200">
-        {todos.map((todo) => (
+      {/* Task List */}
+
+      <ul className="w-full max-w-md bg-white rounded-lg shadow-md divide-y divide-gray-200">
+        {tasks.map((task, index) => (
           <li
-            key={todo.id}
-            className="flex justify-between items-center px-4 py-3 text-lg text-gray-800 hover:bg-gray-50"
+            key={index}
+            className="flex justify-between items-center px-4 py-3 hover:bg-gray-50 transition"
           >
-            <span>{todo.text}</span>
+            <span className="text-gray-800">{task}</span>
+
             <button
-              onClick={() => handleDelete(todo.id)}
-              className="text-red-500 hover:text-red-700 text-sm font-medium ml-4"
+              onClick={() => handleDelete(index)}
+              className="text-red-500 hover:text-red-700 font-semibold"
             >
-              Delete
+              ✖
             </button>
           </li>
         ))}
@@ -58,5 +62,3 @@ function ToDoApp() {
     </div>
   );
 }
-
-export default ToDoApp;
